@@ -1,0 +1,24 @@
+.wp-block-menu-card-monkey-menu-card-section {
+  padding: 5px;
+  background: white;
+  color: black; }
+  .wp-block-menu-card-monkey-menu-card-section > .product-list-title {
+    padding: 0.5em 0px 0.5em 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 1.2em; }
+  .wp-block-menu-card-monkey-menu-card-section > ul.product-list {
+    display: block;
+    margin: 0px; }
+    .wp-block-menu-card-monkey-menu-card-section > ul.product-list > li {
+      display: flex;
+      margin: 0px; }
+      .wp-block-menu-card-monkey-menu-card-section > ul.product-list > li > .product-name {
+        flex: 1 1 auto; }
+      .wp-block-menu-card-monkey-menu-card-section > ul.product-list > li > .product-price {
+        flex: 0 0 auto;
+        text-align: right; }
+    .wp-block-menu-card-monkey-menu-card-section > ul.product-list > li:nth-child(odd) {
+      background-color: rgba(255, 255, 255, 0.2); }
+
+/*# sourceMappingURL=menu_card_section.css.map */

@@ -12,3 +12,11 @@
 * Text Domain:        menu-card-monkey
 * Domain Path:        languages
 **/
+
+// LOAD BLOCKS
+require_once 'blocks/categories/MenuCardMonkeyBlockCategories.php';
+require_once 'blocks/blocks/MenuCardMonkeyBlock.php';
+
+
+MenuCardMonkeyBlockCategories::enable();
+MenuCardMonkeyBlock::enable();

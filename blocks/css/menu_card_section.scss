@@ -1,0 +1,32 @@
+$background: white;
+$textColor: black;
+
+.wp-block-menu-card-monkey-menu-card-section {
+  padding: 5px;
+  background: $background;
+  color: $textColor;
+  >.product-list-title {
+    padding: 0.5em 0px 0.5em 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  >ul.product-list {
+    display: block;
+    margin: 0px;
+    >li {
+      display: flex;
+      margin: 0px;
+      >.product-name {
+        flex: 1 1 auto;
+      }
+      >.product-price {
+        flex: 0 0 auto;
+        text-align: right;
+      }
+    }
+    >li:nth-child( odd ) {
+      background-color: rgba( 256, 256, 256, 0.2 );
+    }
+  }
+}

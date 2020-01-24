@@ -19,4 +19,4 @@ require_once 'blocks/blocks/MenuCardMonkeyBlock.php';
 
 
 MenuCardMonkeyBlockCategories::enable();
-MenuCardMonkeyBlock::enable();
+MenuCardMonkeyBlock::enable( 'menu-category' );

@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+table th {
+  display: block;
+  padding-top: 10px;
+}
+table th>label {
+  display: block;
+  text-align: left;
+}
+table td {
+  display: block;
+}
+table td textarea, table td input {
+  width: 100%;
+}

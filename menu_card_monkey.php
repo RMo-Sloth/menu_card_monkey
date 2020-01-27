@@ -17,6 +17,11 @@
 require_once 'blocks/categories/MenuCardMonkeyBlockCategories.php';
 require_once 'blocks/blocks/MenuCardMonkeyBlock.php';
 
+// LOAD CPT's
+require_once 'CPT/MenuCardMonkeyCPT.php';
+
 
 MenuCardMonkeyBlockCategories::enable();
 MenuCardMonkeyBlock::enable( 'menu-category' );
+
+MenuCardMonkeyCPT::enable( 'products' );

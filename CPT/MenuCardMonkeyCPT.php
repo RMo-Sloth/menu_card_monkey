@@ -3,6 +3,7 @@ require_once 'Product/ProductCPT.php';
 
 abstract class MenuCardMonkeyCPT {
   protected $post_type;
+  
   public static function enable( string $CPTName ) {
     $instance;
     switch( $CPTName ) {

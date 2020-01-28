@@ -82,16 +82,26 @@ function registerCPT() {
       plugins_url() . '/menu_card_monkey/CPT/Product/css/mcm-product-meta-box.css'
     );
     wp_enqueue_style( 'mcm_product_meta_box' );
+    $productMetaString = get_post_meta( $post->ID, 'menu-card-monkey-product', true );
+    if( $productMetaString === '') {
+      echo '<p style="text-align: center">OOPS, the productinfo you are looking for does not seem to exist.</p>';
+      $productMeta = new stdClass();
+      $productMeta->price = '0';
+      $productMeta->description = '';
+    } else {
+      $productMeta = json_decode( $productMetaString );
+    }
+
     ?>
     <table role='presentation'>
       <tbody>
         <tr>
           <th><label for='mcm-price'><?php _e( 'Price', 'menu-card-monkey' ) ?></label></th>
-          <td><input type='number' step='0.01' min='0' pattern='d*\.d{2}' id='mcm-price' name='price' value='0.00'></textarea></td>
+          <td><input type='number' step='0.01' min='0' pattern='d*\.d{2}' id='mcm-price' name='price' value='<?php echo esc_html( $productMeta->price ); ?>'></textarea></td>
         </tr>
         <tr>
           <th><label for='mcm-description'><?php _e( 'Description', 'menu-card-monkey' ) ?></label></th>
-          <td><textarea id='mcm-description' rows='5' name='description'>abc</textarea></td>
+          <td><textarea id='mcm-description' rows='5' name='description'><?php echo esc_html( $productMeta->description ); ?></textarea></td>
         </tr>
       </tbody>
     </table>
@@ -108,10 +118,7 @@ function registerCPT() {
       'price' => $price,
       'description' => $description
     );
-    $data = json_encode( $data ); // TODO: test stripslashes
+    $data = json_encode( $data );
     update_post_meta( $post_id, 'menu-card-monkey-product', $data );
-
   }
-
-  // also delete meta
 }

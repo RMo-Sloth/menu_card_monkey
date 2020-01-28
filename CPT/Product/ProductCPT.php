@@ -85,13 +85,9 @@ function registerCPT() {
     $productMetaString = get_post_meta( $post->ID, 'menu-card-monkey-product', true );
     if( $productMetaString === '') {
       echo '<p style="text-align: center">OOPS, the productinfo you are looking for does not seem to exist.</p>';
-      $productMeta = new stdClass();
-      $productMeta->price = '0';
-      $productMeta->description = '';
-    } else {
-      $productMeta = json_decode( $productMetaString );
+      $productMetaString = '{"price":"0","description":""}';
     }
-
+    $productMeta = json_decode( $productMetaString );
     ?>
     <table role='presentation'>
       <tbody>

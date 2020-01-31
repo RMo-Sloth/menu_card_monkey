@@ -1,5 +1,26 @@
-function mcm_register_menu_card_section_block() {
+(function mcm_register_menu_card_section_block() {
   wp.blocks.registerBlockType( 'menu-card-monkey/menu-card-section', {
+    title: 'Menu Category',
+    description: 'This block displays a list of products from a specific category in your menu.',
+    category: 'menu-card-monkey-blocks',
+    icon: 'list-view',
+    // keywords: ,
+    // styles: [],
+    attributes: {
+      menu_title: {
+        type: 'string',
+        source: 'text',
+        selector: '.product-list-title',
+        default: 'Please enter a menu title',
+        }
+    },
+    // example,
+    // transforms,
+    // parent
+    supports: {
+      anchor: true,
+      customClassName: false,
+    },
     edit( properties ) {
       return wp.element.createElement( 'div', null, 'Edit function output.' );
     },
@@ -27,6 +48,4 @@ function mcm_register_menu_card_section_block() {
       return template;
     }
   } );
-}
-
-wp.domReady( mcm_register_menu_card_section_block );
+})();
